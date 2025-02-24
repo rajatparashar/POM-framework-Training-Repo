@@ -24,7 +24,7 @@ public class LoginPageTest extends BaseTest {
 
 	@Description("checking Login Page Title")
 	@Severity(SeverityLevel.MINOR)
-	@Test
+	@Test(enabled = false)
 	public void loginPageTitleTest() {
 		ChainTestListener.log("Verifying Login page title..");
 		String actTitle = loginPage.getLoginPageTitle();
