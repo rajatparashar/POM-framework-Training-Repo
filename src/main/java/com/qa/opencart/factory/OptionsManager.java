@@ -1,7 +1,6 @@
 package com.qa.opencart.factory;
 
 import java.util.Properties;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +14,7 @@ public class OptionsManager {
 	private Properties prop;
 
 	private static final Logger log = LogManager.getLogger(DriverFactory.class);
+
 	public OptionsManager(Properties prop) {
 		this.prop = prop;
 	}
@@ -31,6 +31,9 @@ public class OptionsManager {
 			log.info("===Running in incognito mode===");
 			co.addArguments("--incognito");
 		}
+		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+			co.setCapability("browserName", "chrome");
+		}
 		return co;
 	}
 
@@ -45,6 +48,9 @@ public class OptionsManager {
 //			System.out.println("===Running in incognito mode===");
 			log.info("===Running in incognito mode===");
 			fo.addArguments("--incognito");
+		}
+		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+			fo.setCapability("browserName", "firefox");
 		}
 		return fo;
 	}
@@ -61,7 +67,9 @@ public class OptionsManager {
 			log.info("===Running in incognito mode===");
 			eo.addArguments("--inprivate");
 		}
+		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+			eo.setCapability("browserName", "edge");
+		}
 		return eo;
 	}
-
 }
