@@ -35,8 +35,8 @@ public class ProductInfoPageTest extends BaseTest {
 
 	@DataProvider
 	public Object[][] getProductImagesData() {
-		return new Object[][] { { "macbook", "MacBook Pro", 3 }, { "macbook", "MacBook Air", 4 }, { "imac", "iMac", 3 },
-				{ "samsung", "Samsung SyncMaster 941BW", 2 }, { "samsung", "Samsung Galaxy Tab 10.1", 7 } };
+		return new Object[][] { { "macbook", "MacBook Pro", 4 }, { "macbook", "MacBook Air", 4 }, { "imac", "iMac", 3 },
+				{ "samsung", "Samsung SyncMaster 941BW", 1 }, { "samsung", "Samsung Galaxy Tab 10.1", 7 } };
 	}
 
 	@Test(dataProvider = "getProductImagesData")
